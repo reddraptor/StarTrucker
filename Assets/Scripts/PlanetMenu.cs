@@ -8,10 +8,12 @@ public class PlanetMenu : MonoBehaviour {
     public Planet planet;
     public Dropdown dropdownTradeNodes;
     public Dropdown dropdownCommodities;
-    public Button button_buy;
-    public Button button_sell;
-    public Text text_buyPrice;
-    public Text text_sellPrice;
+    public GameObject panelBuy;
+    public GameObject panelSell;
+    public Button buttonBuy;
+    public Button buttonSell;
+    public Text textBuyPrice;
+    public Text textSellPrice;
 
     private void Start()
     {
@@ -54,16 +56,40 @@ public class PlanetMenu : MonoBehaviour {
 
     public void OnCommoditiesSelection()
     {
-        priceText.text = planet.tradeNodes[dropdownTradeNodes.value].GetSellPrice(dropdownCommodities.value).ToString() + " Cr.";
+        textBuyPrice.text = PriceString(GetBuyPrice());
+        textSellPrice.text = PriceString(GetSellPrice());
     }
 
     public void OnPressBuy()
     {
+        buttonBuy.interactable = false;
+        buttonSell.interactable = true;
 
+        panelSell.SetActive(false);
+        panelBuy.SetActive(true);
     }
 
     public void OnPressSell()
     {
+        buttonSell.interactable = false;
+        buttonBuy.interactable = true;
 
+        panelBuy.SetActive(false);
+        panelSell.SetActive(true);
+    }
+
+    public int GetSellPrice()
+    {
+        return planet.tradeNodes[dropdownTradeNodes.value].GetSellPrice(dropdownCommodities.value);
+    }
+
+    public int GetBuyPrice()
+    {
+        return planet.tradeNodes[dropdownTradeNodes.value].GetBuyPrice(dropdownCommodities.value);
+    }
+
+    public string PriceString(int price)
+    {
+        return price.ToString() + " Cr.";
     }
 }
