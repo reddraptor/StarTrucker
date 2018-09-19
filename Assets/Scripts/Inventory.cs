@@ -4,6 +4,21 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour {
 
-    public CommodityStorage commodityStorage;
+    [System.Serializable]
+    public class CommodityStore { public Commodity commodity; public int Amount; }
+
+    public CommodityStore[] CommodityStorage;
+
+    public List<Commodity> GetCommodities()
+    {
+        List<Commodity> commodities = new List<Commodity>();
+
+        foreach (CommodityStore commodityStore in CommodityStorage)
+        {
+            commodities.Add(commodityStore.commodity);
+        }
+
+        return commodities;
+    }
 
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TradeNode : MonoBehaviour {
 
+
 	// Use this for initialization
 	void Start () {
 		
@@ -13,4 +14,19 @@ public class TradeNode : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public List<Commodity> GetCommodities()
+    {
+        return GetComponent<Inventory>().GetCommodities();
+    }
+
+    public int GetSellPrice(int index)
+    {
+        return GetComponent<Inventory>().GetCommodities()[index].worth;
+    }
+
+    public int GetBuyPrice(int index)
+    {
+        return GetComponent<Inventory>().GetCommodities()[index].worth/2;
+    }
 }

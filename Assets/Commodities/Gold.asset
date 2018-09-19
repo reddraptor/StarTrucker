@@ -8,9 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d785f15e022ae243a5266b9b6eff2e7, type: 3}
-  m_Name: Iron Mine
+  m_Script: {fileID: 11500000, guid: 5ff60e5396e16f14cae79c98f934c7d8, type: 3}
+  m_Name: Gold
   m_EditorClassIdentifier: 
-  storage:
-  - commodity: {fileID: 11400000, guid: 7c10cc6447e5cdf418373c99b281e4b4, type: 2}
-    amount: 32425
+  worth: 100

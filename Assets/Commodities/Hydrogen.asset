@@ -11,5 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ff60e5396e16f14cae79c98f934c7d8, type: 3}
   m_Name: Hydrogen
   m_EditorClassIdentifier: 
-  label: Hydrogen
   worth: 1
