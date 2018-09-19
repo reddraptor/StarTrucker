@@ -398,7 +398,12 @@ MonoBehaviour:
   planet: {fileID: 1079141015}
   dropdownTradeNodes: {fileID: 232569293}
   dropdownCommodities: {fileID: 1977773548}
-  priceText: {fileID: 934563940}
+  panelBuy: {fileID: 535047343}
+  panelSell: {fileID: 1675322134}
+  buttonBuy: {fileID: 810997569}
+  buttonSell: {fileID: 240561713}
+  textBuyPrice: {fileID: 934563940}
+  textSellPrice: {fileID: 63757970}
 --- !u!1 &63757968
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,7 +415,7 @@ GameObject:
   - component: {fileID: 63757971}
   - component: {fileID: 63757970}
   m_Layer: 0
-  m_Name: Text_Sell_Price
+  m_Name: Sell Price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1159,7 +1164,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 240561714}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 59031735}
+        m_MethodName: OnPressSell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &240561714
@@ -1759,7 +1775,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 593566996}
+  - {fileID: 1413740249}
   - {fileID: 934563939}
   m_Father: {fileID: 33376736}
   m_RootOrder: 2
@@ -2043,14 +2059,14 @@ RectTransform:
   m_GameObject: {fileID: 593566995}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0001477, y: 1.0001477, z: 1.0001477}
   m_Children: []
-  m_Father: {fileID: 535047344}
+  m_Father: {fileID: 1675322135}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 78.73001, y: -19.6}
+  m_AnchoredPosition: {x: 78.71959, y: -19.600174}
   m_SizeDelta: {x: 157.46, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &593566997
@@ -2085,7 +2101,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Buying Price:'
+  m_Text: 'Our Buying Price:'
 --- !u!222 &593566998
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2571,7 +2587,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 810997570}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 59031735}
+        m_MethodName: OnPressBuy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &810997570
@@ -2728,7 +2755,7 @@ GameObject:
   - component: {fileID: 934563941}
   - component: {fileID: 934563940}
   m_Layer: 0
-  m_Name: Buy Price
+  m_Name: Sell Price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3423,7 +3450,7 @@ GameObject:
   - component: {fileID: 1413740251}
   - component: {fileID: 1413740250}
   m_Layer: 0
-  m_Name: Label_Selling Price
+  m_Name: Price Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3437,14 +3464,14 @@ RectTransform:
   m_GameObject: {fileID: 1413740248}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9998523, y: 0.9998523, z: 0.9998523}
   m_Children: []
-  m_Father: {fileID: 1675322135}
+  m_Father: {fileID: 535047344}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 78.73001, y: -19.6}
+  m_AnchoredPosition: {x: 78.74044, y: -19.599827}
   m_SizeDelta: {x: 157.46, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1413740250
@@ -3479,7 +3506,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Selling Price:'
+  m_Text: 'Our Selling Price:'
 --- !u!222 &1413740251
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3697,7 +3724,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.9998523, y: 0.9998523, z: 0.9998523}
   m_Children:
-  - {fileID: 1413740249}
+  - {fileID: 593566996}
   - {fileID: 63757969}
   m_Father: {fileID: 33376736}
   m_RootOrder: 3

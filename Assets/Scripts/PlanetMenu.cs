@@ -12,8 +12,8 @@ public class PlanetMenu : MonoBehaviour {
     public GameObject panelSell;
     public Button buttonBuy;
     public Button buttonSell;
-    public Text textBuyPrice;
-    public Text textSellPrice;
+    public Text textBuyingPrice;
+    public Text textSellingPrice;
 
     private void Start()
     {
@@ -56,8 +56,8 @@ public class PlanetMenu : MonoBehaviour {
 
     public void OnCommoditiesSelection()
     {
-        textBuyPrice.text = PriceString(GetBuyPrice());
-        textSellPrice.text = PriceString(GetSellPrice());
+        textBuyingPrice.text = PriceString(GetBuyPrice());
+        textSellingPrice.text = PriceString(GetSellPrice());
     }
 
     public void OnPressBuy()
