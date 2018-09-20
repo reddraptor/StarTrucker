@@ -20,13 +20,18 @@ public class TradeNode : MonoBehaviour {
         return GetComponent<Inventory>().GetCommodities();
     }
 
-    public int GetSellPrice(int index)
+    public float GetSellPrice(int index)
     {
         return GetComponent<Inventory>().GetCommodities()[index].worth;
     }
 
-    public int GetBuyPrice(int index)
+    public float GetBuyPrice(int index)
     {
         return GetComponent<Inventory>().GetCommodities()[index].worth/2;
+    }
+
+    public int GetAmount(int index)
+    {
+        return GetComponent<Inventory>().commodityStorage[index].amount;
     }
 }

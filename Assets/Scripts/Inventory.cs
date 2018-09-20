@@ -5,15 +5,15 @@ using UnityEngine;
 public class Inventory : MonoBehaviour {
 
     [System.Serializable]
-    public class CommodityStore { public Commodity commodity; public int Amount; }
+    public class CommodityStore { public Commodity commodity; public int amount; }
 
-    public CommodityStore[] CommodityStorage;
+    public CommodityStore[] commodityStorage;
 
     public List<Commodity> GetCommodities()
     {
         List<Commodity> commodities = new List<Commodity>();
 
-        foreach (CommodityStore commodityStore in CommodityStorage)
+        foreach (CommodityStore commodityStore in commodityStorage)
         {
             commodities.Add(commodityStore.commodity);
         }

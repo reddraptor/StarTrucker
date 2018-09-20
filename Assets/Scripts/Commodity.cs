@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "commodity", menuName = "Commodity")]
 public class Commodity : ScriptableObject {
 
-    public int worth;
+    public float worth;
 }

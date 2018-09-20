@@ -402,8 +402,8 @@ MonoBehaviour:
   panelSell: {fileID: 1675322134}
   buttonBuy: {fileID: 810997569}
   buttonSell: {fileID: 240561713}
-  textBuyPrice: {fileID: 934563940}
-  textSellPrice: {fileID: 63757970}
+  textBuyingPrice: {fileID: 63757970}
+  textSellingPrice: {fileID: 934563940}
 --- !u!1 &63757968
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,7 +415,7 @@ GameObject:
   - component: {fileID: 63757971}
   - component: {fileID: 63757970}
   m_Layer: 0
-  m_Name: Sell Price
+  m_Name: Buying Price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2755,7 +2755,7 @@ GameObject:
   - component: {fileID: 934563941}
   - component: {fileID: 934563940}
   m_Layer: 0
-  m_Name: Sell Price
+  m_Name: Selling Price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

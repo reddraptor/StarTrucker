@@ -14,6 +14,8 @@ public class PlanetMenu : MonoBehaviour {
     public Button buttonSell;
     public Text textBuyingPrice;
     public Text textSellingPrice;
+    public Slider sliderUnitAmount;
+    public InputField inputFieldUnitAmount;
 
     private void Start()
     {
@@ -43,10 +45,19 @@ public class PlanetMenu : MonoBehaviour {
             dropdownCommodities.options.Add(new Dropdown.OptionData(commodity.name));
         }
 
-
         dropdownCommodities.RefreshShownValue();
 
         OnCommoditiesSelection();
+
+        RefreshUnitAmountSlider();
+    }
+
+    private void RefreshUnitAmountSlider()
+    {
+        sliderUnitAmount.wholeNumbers = true;
+        sliderUnitAmount.minValue = 0;
+        sliderUnitAmount.maxValue = GetCommodityAmount();
+        OnSliderChange();
     }
 
     public void OnTradeNodeSelection()
@@ -78,18 +89,33 @@ public class PlanetMenu : MonoBehaviour {
         panelSell.SetActive(true);
     }
 
-    public int GetSellPrice()
+    public float GetSellPrice()
     {
         return planet.tradeNodes[dropdownTradeNodes.value].GetSellPrice(dropdownCommodities.value);
     }
 
-    public int GetBuyPrice()
+    public float GetBuyPrice()
     {
         return planet.tradeNodes[dropdownTradeNodes.value].GetBuyPrice(dropdownCommodities.value);
     }
 
-    public string PriceString(int price)
+    public string PriceString(float price)
     {
-        return price.ToString() + " Cr.";
+        return price.ToString("N2") + " Cr.";
+    }
+
+    public int GetCommodityAmount()
+    {
+        return planet.tradeNodes[dropdownTradeNodes.value].GetAmount(dropdownCommodities.value);
+    }
+
+    public string UnitsString(float unitsAmount)
+    {
+        return ((int)unitsAmount).ToString() + " Units";
+    }
+
+    public void OnSliderChange()
+    {
+        inputFieldUnitAmount.text = UnitsString(sliderUnitAmount.value);
     }
 }
