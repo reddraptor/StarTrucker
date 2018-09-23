@@ -16,6 +16,7 @@ public class PlanetMenu : MonoBehaviour {
     public Text textSellingPrice;
     public Slider sliderUnitAmount;
     public InputField inputFieldUnitAmount;
+    public Text textTotalCost;
 
     private void Start()
     {
@@ -78,6 +79,8 @@ public class PlanetMenu : MonoBehaviour {
 
         panelSell.SetActive(false);
         panelBuy.SetActive(true);
+
+        RefreshUnitAmountSlider();
     }
 
     public void OnPressSell()
@@ -87,6 +90,8 @@ public class PlanetMenu : MonoBehaviour {
 
         panelBuy.SetActive(false);
         panelSell.SetActive(true);
+
+        RefreshUnitAmountSlider();
     }
 
     public float GetSellPrice()
@@ -117,5 +122,7 @@ public class PlanetMenu : MonoBehaviour {
     public void OnSliderChange()
     {
         inputFieldUnitAmount.text = UnitsString(sliderUnitAmount.value);
+        if (!buttonBuy.interactable) textTotalCost.text = PriceString(sliderUnitAmount.value * GetSellPrice());
+        else if (!buttonSell.interactable) textTotalCost.text = PriceString(sliderUnitAmount.value * GetBuyPrice());
     }
 }
